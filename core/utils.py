@@ -48,42 +48,18 @@ def get_object_store_connection():
         raise Exception(ex)
 
 
-def get_swagger_json():
+def load_swagger(app):
     """
-    Returns the swagger doc.
+    Loads the swagger ui.
     """
-    return json.dumps({
-        "swagger": "2.0",
-        "info": {
-            "title": "Cloud Proxy",
-            "version": "0.1"
-        },
-        "consumes": [
-            "application/json"
-        ],
-        "produces": [
-            "application/json"
-        ],
-        "paths": {
-            "/buckets/": {
-                "parameters": [
-                ],
-                "get": {
-                    "operationId": "list_buckets",
-                    "summary": "List buckets",
-                    "description": "Lists all buckets associated to the user.\n",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "200 response",
-                            "examples": {
-                                "application/json": "{'response':[{'CreationDate':'Thu, 27 Feb 2020 00:02:08 GMT','Name':'my-bucket-01'},{'CreationDate':'Thu, 27 Feb 2020 00:26:53 GMT','Name':'my-bucket-02'},{'CreationDate':'Wed, 26 Feb 2020 23:50:44 GMT','Name':'zach-bucket-03'}]}"
-                            }
-                        }
-                    }
-                }
-            }
+    from flask_swagger_ui import get_swaggerui_blueprint
+    SWAGGER_URL = '/swagger'
+    API_URL = '/static/swagger.json'
+    SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+        SWAGGER_URL,
+        API_URL,
+        config={
+            'app_name': "Cloud Proxy Gateway"
         }
-    })
+    )
+    app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)

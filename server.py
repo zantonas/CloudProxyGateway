@@ -1,5 +1,5 @@
 from flask import Flask, redirect, abort
-from core.utils import get_object_store_connection
+from core.utils import get_object_store_connection, load_swagger
 from core.constants import HTTP_GET, HTTP_PUT, HTTP_POST, HTTP_DELETE
 
 app = Flask(__name__)
@@ -84,4 +84,5 @@ def delete_object_from_cloud(bucket, obj):
 
 
 if __name__ == '__main__':
+    load_swagger(app)
     app.run(host='127.0.0.1', port=5000)
