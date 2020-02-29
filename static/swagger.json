@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Cloud Proxy",
+    "title": "Cloud Proxy Gateway",
     "version": "0.1"
   },
   "consumes": [
