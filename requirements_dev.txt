@@ -1,0 +1,4 @@
+redis==3.3.11
+Flask==1.1.1
+boto3==1.12.11
+requests==2.23.0
