@@ -1,6 +1,6 @@
-from core.provider.s3_provider import S3Provider, S3CompatibleProvider
-from core.gateway.redis_gateway import RedisGateway
-from core.constants import PROVIDER_S3
+from cloudproxygateway.provider.s3_provider import S3Provider, S3CompatibleProvider
+from cloudproxygateway.gateway.redis_gateway import RedisGateway
+from cloudproxygateway.constants import PROVIDER_S3
 
 import json
 

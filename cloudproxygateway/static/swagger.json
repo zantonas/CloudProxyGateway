@@ -45,7 +45,9 @@
       "get": {
         "operationId": "list_objects",
         "summary": "List objects",
-        "tags": ["objects"],
+        "tags": [
+          "objects"
+        ],
         "description": "Lists all objects associated to a bucket.\n",
         "produces": [
           "application/json"
@@ -55,6 +57,12 @@
             "description": "200 response",
             "examples": {
               "application/json": "{'response':[{'ETag':'9dd2f81d275e6c903774e737290b84b0','Key':'random_file','LastModified':'Fri, 28 Feb 2020 20:43:17 GMT','Size':64,'StorageClass':'STANDARD'},{'Key':'test_file','LastModified':'Sat, 29 Feb 2020 14:38:31 GMT','Size':68,'StorageClass':'STANDARD'}]}"
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "examples": {
+              "application/json": "<Response [404]>"
             }
           }
         }
@@ -92,6 +100,12 @@
               "text/plain": "<Response [200]>\nsome test file\nwhich doesnt really\nhave much information inside"
 
             }
+          },
+          "404": {
+            "description": "404 response",
+            "examples": {
+              "application/json": "<Response [404]>"
+            }
           }
         }
       },
@@ -119,6 +133,12 @@
             "description": "200 response",
             "examples": {
               "text/plain": "<Response [200]>"
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "examples": {
+              "application/json": "<Response [404]>"
             }
           }
         }

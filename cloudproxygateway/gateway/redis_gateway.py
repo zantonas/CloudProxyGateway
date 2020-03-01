@@ -1,5 +1,5 @@
-from core.gateway.abstract_gateway import AbstractGateway
-from core import utils
+from cloudproxygateway.gateway.abstract_gateway import AbstractGateway
+from cloudproxygateway import utils
 
 import redis
 
@@ -27,5 +27,5 @@ class RedisGateway(AbstractGateway):
         try:
             credentials = self.r.get(authenticated_user).decode('utf-8').split(',', 3)
             return credentials[0], credentials[1], credentials[2], credentials[3]
-        except Exception:
-            raise Exception('Key not found')
+        except Exception as ex:
+            raise Exception(ex)

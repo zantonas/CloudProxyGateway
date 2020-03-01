@@ -1,6 +1,6 @@
 import boto3
 
-from core.provider.abstract_provider import AbstractProvider
+from cloudproxygateway.provider.abstract_provider import AbstractProvider
 
 
 class S3Provider(AbstractProvider):

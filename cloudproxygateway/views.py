@@ -1,8 +1,9 @@
 from flask import Flask, redirect, abort
-from core.utils import get_object_store_connection, load_swagger
-from core.constants import HTTP_GET, HTTP_PUT, HTTP_POST, HTTP_DELETE
+from cloudproxygateway.utils import get_object_store_connection, load_swagger
+from cloudproxygateway.constants import HTTP_GET, HTTP_PUT, HTTP_POST, HTTP_DELETE
 
 app = Flask(__name__)
+load_swagger(app)
 
 
 @app.route('/buckets/', methods=[HTTP_GET])
