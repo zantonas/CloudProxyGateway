@@ -8,4 +8,4 @@ CloudProxyGateway provides abstraction between multiple object providers and end
 1. Execute app.py.  
   
 ## Examples ##  
-* Refer to examples/examples.py for user examples.
+* Refer to example/examples.py for user examples.
