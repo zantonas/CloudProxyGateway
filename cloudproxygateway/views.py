@@ -82,8 +82,3 @@ def delete_object_from_cloud(bucket, obj):
         return response
     except Exception:
         abort(404)
-
-
-if __name__ == '__main__':
-    load_swagger(app)
-    app.run(host='127.0.0.1', port=5000)
